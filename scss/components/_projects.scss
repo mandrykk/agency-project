@@ -1,0 +1,100 @@
+#projects {
+    background: url('../../image/projects-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 5rem;
+
+    &__wrapper {
+        display: flex;
+        gap: 10%;
+        align-items: center;
+
+        &:nth-child(2) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__img {
+        position: relative;
+        min-width: 35%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            width: 90%;
+            height: 90%;
+            border-radius: 8px;
+            border: 4px solid var(--first-project-border-color);
+            z-index: -1;
+        }
+    }
+
+    &__wrapper:nth-child(1) &__img::after,
+    &__wrapper:nth-child(3) &__img::after {
+        left: -20px;
+    }
+
+    &__wrapper:nth-child(2) &__img::after {
+        right: -20px;
+        border-color: var(--second-project-border-color);
+    }
+
+    &__wrapper:nth-child(3) &__img::after {
+        border-color: var(--third-project-border-color);
+    }
+
+    &__category {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects {
+        flex-direction: column !important;
+        gap: 2rem;
+
+        &__img {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        &__wrapper:nth-child(1) &__img::after,
+        &__wrapper:nth-child(3) &__img::after {
+            left: -10px;
+        }
+
+        &__wrapper:nth-child(2) &__img::after {
+            right: -10px;
+        }
+
+        &__title {
+            font-size: 1.5rem;
+        }
+    }
+}

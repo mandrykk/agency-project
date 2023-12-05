@@ -1,0 +1,39 @@
+.team {
+    display: flex;
+    gap: 3rem;
+
+    &__wrapper {
+        &:nth-child(2),
+        &:nth-child(4) {
+            margin-top: 5rem;
+        }
+    }
+
+    &__img {
+        margin-bottom: 1rem;
+    }
+
+    &__content h2 {
+        margin-bottom: 0.25rem;
+    }
+
+    &__content p {
+        opacity: 0.4;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team {
+        flex-direction: column;
+        text-align: center;
+
+        &__wrapper {
+            margin: 0 !important;
+        }
+
+        &__img {
+            max-width: 300px;
+        }
+    }
+}

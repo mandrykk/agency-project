@@ -1,0 +1,52 @@
+.hero {
+    min-height: 100vh;
+
+    &__content {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+    }
+
+    &__img {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+
+        &__content {
+            width: 100%;
+            margin-top: 50px;
+            text-align: center;
+
+            .btn {
+                margin: 0 auto;
+            }
+        }
+
+        &__title {
+            font-size: 2.5rem;
+        }
+
+        &__img {
+            width: 100%;
+        }
+    }
+}
